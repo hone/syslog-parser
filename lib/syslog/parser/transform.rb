@@ -24,7 +24,7 @@ module Syslog
         Message.new(
           Integer(syslog_msg[:prival]),
           Integer(syslog_msg[:version]),
-          Time.parse(syslog_msg[:timestamp]),
+          Time.parse(syslog_msg[:timestamp].to_s),
           syslog_msg[:hostname] && syslog_msg[:hostname].to_s,
           syslog_msg[:app_name] && syslog_msg[:app_name].to_s,
           syslog_msg[:procid] && syslog_msg[:procid].to_s,
